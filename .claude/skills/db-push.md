@@ -1,6 +1,6 @@
 # /db-push
 
-Safely push database migrations to the Step 1 Supabase project.
+Safely push database migrations to the COMPOUND Supabase project.
 
 ## Process
 

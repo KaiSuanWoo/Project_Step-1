@@ -28,7 +28,7 @@ If creating a new branch, use: `feat/<short-description>`, `fix/<short-descripti
 
 ## Example
 ```bash
-git add app/(tabs)/menu.tsx app/shop.tsx app/profile.tsx
+git add Compound/Features/Menu/MenuView.swift Compound/Features/Menu/ShopView.swift Compound/Features/Menu/ProfileView.swift
 git commit -m "feat: replace shop tab with menu hub
 
 Adds profile, inventory, and about screens accessible from menu tab.

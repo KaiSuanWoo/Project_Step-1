@@ -1,24 +1,26 @@
 # /check
 
-Run TypeScript type checking across the app (excluding Supabase Edge Functions).
+Run Swift build check to verify the project compiles without errors.
 
 ## Command
 
 ```bash
-npx tsc --noEmit
+xcodebuild -scheme Compound -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build 2>&1 | tail -50
 ```
 
 ## Output format
-For each error, print:
+For each error, identify:
 ```
-FILE:LINE TS[code]: message
+FILE:LINE: error: message
 ```
 
 ## Notes
-- `supabase/**` is excluded via `tsconfig.json` — Deno Edge Functions are not checked here.
+- `supabase/**` Edge Functions (Deno/TypeScript) are not checked here.
 - Target: **0 errors** before any PR or deployment.
 - Common issues to look for:
-  - `ViewStyle` cast missing when spreading theme fragments into `StyleSheet.create`
-  - Missing `as const` on style objects
-  - Incorrect Expo Router param types (`useLocalSearchParams<{ id: string }>`)
-  - Import path aliases (`@/`) not resolving
+  - Missing protocol conformance (`Type does not conform to protocol`)
+  - `@Observable` macro issues (using `@Published` instead)
+  - SwiftData `@Model` relationship errors
+  - NavigationStack type-safe path mismatches
+  - Missing imports or unresolved identifiers
+  - `Theme.swift` token references that don't exist

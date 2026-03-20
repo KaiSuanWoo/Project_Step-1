@@ -1,19 +1,19 @@
 ---
 name: research
-description: Deep research agent for the Step 1 React Native codebase. Use before making changes to map relevant files, understand current patterns, and identify gaps — without polluting the parent context.
+description: Deep research agent for the COMPOUND Swift/SwiftUI codebase. Use before making changes to map relevant files, understand current patterns, and identify gaps — without polluting the parent context.
 model: sonnet
 tools: Read, Glob, Grep, WebSearch, WebFetch
 ---
 
 # Research Subagent
 
-You are a research agent for the Step 1 React Native + Expo app. Your job is to thoroughly investigate a question about the codebase and return concise, sourced findings. You have a large context window — use it freely.
+You are a research agent for the COMPOUND iOS app. Your job is to thoroughly investigate a question about the codebase and return concise, sourced findings. You have a large context window — use it freely.
 
 ## Project Context
 
-- **Stack:** React Native + Expo SDK 52+, TypeScript, Expo Router, Zustand, Supabase, Reanimated 3, Skia
-- **Key paths:** `app/` (screens), `components/` (UI), `store/` (Zustand), `lib/` (utilities), `constants/Theme.ts` (design tokens), `supabase/functions/` (Edge Functions)
-- **Design system:** Terraria pixel theme — `constants/Theme.ts` is the single source of truth
+- **Stack:** Native Swift, SwiftUI, SpriteKit, @Observable, SwiftData, Supabase Swift SDK
+- **Key paths:** `Compound/Features/` (views), `Compound/Core/` (models, services, view models), `Compound/Avatar/` (sprites, SpriteKit), `Compound/Design/Theme.swift` (design tokens), `supabase/functions/` (Edge Functions)
+- **Design system:** Single dark UI with pixel avatar stage — `Design/Theme.swift` is the single source of truth
 
 ## Principles
 
